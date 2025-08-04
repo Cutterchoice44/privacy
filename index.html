@@ -46,8 +46,7 @@
       justify-content: flex-end !important;
       flex: 1 !important;
     }
-    #main-nav a,
-    #main-nav .nav-link {
+    #main-nav a.nav-link {
       color: #fff !important;
       font-family: 'Bebas Neue', sans-serif !important;
       font-size: 2rem !important;
@@ -80,8 +79,7 @@
         text-align: center !important;
         flex: 1 !important;
       }
-      #main-nav a,
-      #main-nav .nav-link {
+      #main-nav a.nav-link {
         font-size: 1rem !important;
         margin: 0 0.25rem !important;
       }
@@ -91,7 +89,7 @@
     }
   </style>
 
-  <!-- Chromecast Initialization Callback -->
+  <!-- Chromecast Init & SDK -->
   <script>
     window.__onGCastApiAvailable = isAvailable => {
       if (isAvailable) {
@@ -102,8 +100,6 @@
       }
     };
   </script>
-
-  <!-- Chromecast Web Sender SDK -->
   <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
 
   <!-- Other head scripts -->
@@ -146,9 +142,7 @@
     </div>
     <div class="nav-item nav-right">
       <a href="merch.html" class="nav-link">MERCH</a>
-      <a href="privacy-policy.html" class="nav-link">PRIVACY POLICY</a>
 
-      <!-- Facebook & Instagram -->
       <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon">
         <i class="fab fa-facebook-f"></i>
       </a>
@@ -157,11 +151,11 @@
       </a>
 
       <!-- Alexa logo -->
-      <img src="/images/alexa-logo.webp" alt="Alexa" class="icon-img">
+      <img src="/images/alexa-logo.webp" alt="Alexa" class="icon-img" loading="lazy">
 
       <!-- TuneIn logo + link -->
       <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/" target="_blank">
-        <img src="/images/tunein-logo.png" alt="TuneIn" class="icon-img">
+        <img src="/images/tunein-logo.png" alt="TuneIn" class="icon-img" loading="lazy">
       </a>
 
       <!-- OneMusic badge -->
@@ -171,7 +165,6 @@
         </a>
       </div>
 
-      <!-- Cast buttons -->
       <google-cast-button></google-cast-button>
       <button id="manualCastBtn" title="Cast this stream">
         <i class="fab fa-chromecast"></i>
@@ -297,8 +290,8 @@
       const right = document.querySelector('.header-gif-right');
       const left = document.querySelector('.header-gif-left');
       let loop = 0;
-      const set1 = ["url('/images/Untitled%20design(4).gif')","url('/images/Untitled%20design(5).gif')"];
-      const set2 = ["url('/images/Untitled%20design(7).gif')","url('/images/Untitled%20design(8).gif')"];
+      const set1 = ["url('/images/Untitled%20design(4).gif')", "url('/images/Untitled%20design(5).gif')"];
+      const set2 = ["url('/images/Untitled%20design(7).gif')", "url('/images/Untitled%20design(8).gif')"];
       right.style.backgroundImage = set1[0];
       left.style.backgroundImage = set1[1];
       right.addEventListener('animationiteration', () => {
