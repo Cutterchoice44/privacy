@@ -41,12 +41,11 @@
     #main-nav .nav-center { text-align: center !important; }
     #main-nav .nav-right {
       display: flex !important;
-      justify-content: flex-end !important;
       align-items: center !important;
-      text-align: right !important;
+      justify-content: flex-end !important;
       flex: 1 !important;
     }
-    #main-nav a {
+    #main-nav a.nav-link {
       color: #fff !important;
       font-family: 'Bebas Neue', sans-serif !important;
       font-size: 2rem !important;
@@ -54,17 +53,14 @@
       text-decoration: none !important;
       margin: 0 0.5rem !important;
     }
-    /* Social & logo icons in nav */
     #main-nav .social-icon,
     #main-nav .icon-img {
       margin-left: 0.5rem !important;
       vertical-align: middle !important;
-      font-size: 1.2rem !important;
-      color: #fff !important;
       width: 2rem !important;
       height: auto !important;
     }
-    /* Fallback Cast button styling */
+    /* Cast fallback */
     #manualCastBtn {
       background: none;
       border: none;
@@ -74,19 +70,9 @@
       margin-left: 0.5rem;
     }
     @media (max-width: 768px) {
-      #main-nav {
-        flex-wrap: nowrap !important;
-        padding: 0.115rem 0.5rem !important;
-      }
-      #main-nav .nav-item {
-        flex: 1 !important;
-        text-align: center !important;
-        margin: 0 !important;
-      }
-      #main-nav a {
-        font-size: 1rem !important;
-        margin: 0 0.25rem !important;
-      }
+      #main-nav { flex-wrap: nowrap !important; padding: 0.115rem 0.5rem !important; }
+      #main-nav .nav-item { text-align: center !important; flex: 1 !important; }
+      #main-nav a.nav-link { font-size: 1rem !important; margin: 0 0.25rem !important; }
       #main-nav .social-icon,
       #main-nav .icon-img,
       #main-nav .nav-onemusic { display: none !important; }
@@ -104,11 +90,7 @@
       }
     };
   </script>
-
-  <!-- Chromecast Web Sender SDK -->
   <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-
-  <!-- Other head scripts -->
   <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" defer></script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MSGZZ5QL6"></script>
   <script>
@@ -141,15 +123,15 @@
   <!-- NAVIGATION -->
   <nav id="main-nav">
     <div class="nav-item nav-left">
-      <a href="our-story.html">OUR STORY</a>
+      <a href="our-story.html" class="nav-link">OUR STORY</a>
     </div>
     <div class="nav-item nav-center">
-      <a href="index-ourDJS.html">OUR DJS</a>
+      <a href="index-ourDJS.html" class="nav-link">OUR DJS</a>
     </div>
     <div class="nav-item nav-right">
-      <a href="merch.html">MERCH</a>
+      <a href="merch.html" class="nav-link">MERCH</a>
 
-      <!-- social -->
+      <!-- Facebook & Instagram -->
       <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon">
         <i class="fab fa-facebook-f"></i>
       </a>
@@ -157,12 +139,12 @@
         <i class="fab fa-instagram"></i>
       </a>
 
-      <!-- Alexa logo (plain image) -->
-      <img src="/images/alexa-logo.png" alt="Alexa Logo" class="icon-img">
+      <!-- Alexa logo (static image) -->
+      <img src="/images/alexa-logo.png" alt="Alexa" class="icon-img">
 
-      <!-- TuneIn icon + link -->
-      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/" target="_blank" class="social-icon">
-        <i class="fab fa-tunein"></i>
+      <!-- TuneIn logo with link -->
+      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/" target="_blank">
+        <img src="/images/tunein-logo.png" alt="TuneIn" class="icon-img">
       </a>
 
       <!-- OneMusic badge -->
@@ -234,22 +216,37 @@
 
   <!-- FOOTER -->
   <footer class="banner">
-    <div style="display:flex; justify-content:space-between; align-items:center; padding:0.10rem 0.65rem;">
+    <div style="
+      background-color: var(--brand-teal);
+      padding: 0.10rem 0.65rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    ">
       <a href="privacy-policy.html"
-         style="color:#fff; font-family:'Bebas Neue',sans-serif; font-size:2rem; text-decoration:none;">
+         style="
+           color: #fff;
+           font-family: 'Bebas Neue', sans-serif;
+           font-size: 2rem;
+           text-transform: uppercase;
+           text-decoration: none;
+         ">
         PRIVACY POLICY
       </a>
-      <span style="color:#fff; font-family:'Bebas Neue',sans-serif; font-size:1rem;">
+      <span style="
+        color: #fff;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+      ">
         Amazon, Alexa and all related logos are trademarks of Amazon.com, Inc. or its affiliates.
       </span>
     </div>
   </footer>
 
-  <!-- YOUR SCRIPTS -->
+  <!-- SCRIPTS UNCHANGED -->
   <script src="script.js?v=1754278045444" defer></script>
   <script src="slideshow.js?v=1754278045444" defer></script>
-
-  <!-- Chromecast Handler & Manual Fallback -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const context = cast.framework.CastContext.getInstance();
@@ -278,8 +275,6 @@
       });
     });
   </script>
-
-  <!-- GIF-SWAP SCRIPT -->
   <script>
     (function() {
       const right = document.querySelector('.header-gif-right');
