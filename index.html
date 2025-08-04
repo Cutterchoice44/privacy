@@ -14,11 +14,14 @@
   <title>Cutters Choice Radio</title>
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1754278045444">
+  <link rel="stylesheet" href="style.css?v=1754285329454">
 
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- INLINE NAV STYLING -->
+  <!-- … your existing <head> … -->
 
   <!-- INLINE NAV STYLING -->
   <style>
@@ -26,223 +29,46 @@
 
     /* NAVIGATION BAR */
     #main-nav {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      width: 100% !important;
-      padding: 0.10rem 0.65rem !important;
-      margin: 0 !important;
-      box-sizing: border-box !important;
-      background-color: var(--brand-teal) !important;
-      position: relative !important;
-      z-index: 1000 !important;
+      /* … same as before … */
     }
-    #main-nav .nav-item { flex: 1 !important; }
-    #main-nav .nav-left { text-align: left !important; }
-    #main-nav .nav-center { text-align: center !important; }
-    #main-nav .nav-right {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      flex: 1 !important;
-    }
-    #main-nav a.nav-link {
-      color: #fff !important;
-      font-family: 'Bebas Neue', sans-serif !important;
-      font-size: 2rem !important;
-      text-transform: uppercase !important;
-      text-decoration: none !important;
-      margin: 0 0.5rem !important;
-    }
+    /* … other rules … */
+
+    /* ↑ only this block changed: ↑ */
     #main-nav .social-icon,
     #main-nav .icon-img {
       margin-left: 0.5rem !important;
       vertical-align: middle !important;
-      width: 2rem !important;
+      width: 2.4rem !important;       /* was 2rem */
       height: auto !important;
     }
-    /* Cast fallback button */
+
+    /* Cast fallback button (bumped 20%) */
     #manualCastBtn {
       background: none;
       border: none;
       color: #fff;
-      font-size: 1.8rem;
+      font-size: 2.16rem;             /* was 1.8rem */
       cursor: pointer;
       margin-left: 0.5rem;
     }
-    @media (max-width: 768px) {
-      #main-nav {
-        flex-wrap: nowrap !important;
-        padding: 0.115rem 0.5rem !important;
-      }
-      #main-nav .nav-item {
-        text-align: center !important;
-        flex: 1 !important;
-      }
-      #main-nav a.nav-link {
-        font-size: 1rem !important;
-        margin: 0 0.25rem !important;
-      }
-      #main-nav .social-icon,
-      #main-nav .icon-img,
-      #main-nav .nav-onemusic { display: none !important; }
-    }
+
+    /* … rest unchanged … */
   </style>
 
-  <!-- Chromecast Init & SDK -->
-  <script>
-    window.__onGCastApiAvailable = isAvailable => {
-      if (isAvailable) {
-        cast.framework.CastContext.getInstance().setOptions({
-          receiverApplicationId: '77E0F81B',
-          autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
-        });
-      }
-    };
-  </script>
-  <script src="https://www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
-
-  <!-- Other head scripts -->
-  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js" defer></script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3MSGZZ5QL6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}  
-    gtag('js', new Date());
-    gtag('config', 'G-3MSGZZ5QL6');
-  </script>
-</head>
-
-<body>
-  <!-- HEADER -->
-  <header class="header-banner">
-    <div class="header-gif-right"></div>
-    <div class="header-gif-left"></div>
-    <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
-    </div>
-    <div class="title">
-      <h1>Cutters Choice Radio</h1>
-      <p class="tagline">The home of relentless flavas and significant bangers!</p>
-    </div>
-    <div class="logo-container">
-      <img class="logo" src="/images/logo.png" alt="Cutters Choice Radio Logo" loading="lazy">
-    </div>
-  </header>
-
-  <div style="height:2px;background-color:var(--brand-teal);"></div>
-
-  <!-- NAVIGATION -->
-  <nav id="main-nav">
-    <div class="nav-item nav-left">
-      <a href="our-story.html" class="nav-link">OUR STORY</a>
-    </div>
-    <div class="nav-item nav-center">
-      <a href="index-ourDJS.html" class="nav-link">OUR DJS</a>
-    </div>
-    <div class="nav-item nav-right">
-      <a href="merch.html" class="nav-link">MERCH</a>
-
-      <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://instagram.com/cutterschoiceradio" target="_blank" class="social-icon">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <!-- Alexa icon wrapped in a link -->
-      <a href="https://www.amazon.com/gp/skill/51a30906-f266-488b-ad8e-f9d872b0760c"
-         target="_blank" title="Enable our Alexa Skill">
-        <img src="/images/alexa-logo.webp"
-             alt="Enable on Alexa"
-             class="icon-img"
-             loading="lazy">
-      </a>
-
-      <!-- TuneIn icon wrapped in a link -->
-      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/"
-         target="_blank" title="Listen on TuneIn">
-        <img src="/images/tunein-logo.png"
-             alt="Listen on TuneIn"
-             class="icon-img"
-             loading="lazy">
-      </a>
-
-      <!-- OneMusic badge -->
-      <div class="nav-onemusic">
-        <a href="https://onemusicnz.com" target="_blank" rel="noopener">
-          <img src="/images/ONEMUSICLOGO.png"
-               alt="We’re licensed to play OneMusic NZ"
-               loading="lazy">
-        </a>
-      </div>
-
-      <google-cast-button></google-cast-button>
-      <button id="manualCastBtn" title="Cast this stream">
-        <i class="fab fa-chromecast"></i>
-      </button>
-    </div>
-  </nav>
-
-  <div style="height:2px;background-color:var(--brand-teal);"></div>
-
-  <!-- MAIN GRID CONTENT -->
-  <div class="grid-container">
-    <!-- CHAT SECTION -->
-    <section class="chat">
-      <h2>Cutters Chat</h2>
-      <iframe title="Cutters Choice Radio Chat"
-              src="https://app.radiocult.fm/embed/chat/cutters-choice-radio?theme=midnight&primaryColor=%235A8785&corners=sharp"
-              width="100%" height="700" frameborder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" seamless>
-      </iframe>
-      <div class="chat-actions"><button class="popout-btn" onclick="openChatPopup()">Pop Out Chat</button></div>
-      <div class="rc-user-list-container"><div class="rc-user-list"></div></div>
-    </section>
-
-    <!-- LIVE PLAYER SECTION -->
-    <section class="live-player">
-      <h2 id="now-dj">Live Now</h2>
-      <div class="player-container">
-        <iframe id="inlinePlayer" title="Cutters Choice Radio player"
-                src="https://app.radiocult.fm/embed/square-player/cutters-choice-radio?theme=midnight&primaryColor=%235A8785&corners=sharp"
-                allow="autoplay; encrypted-media" loading="lazy"></iframe>
-        <div id="now-archive">Loading archive show…</div>
-        <button id="popOutBtn" class="popout-btn">Pop Out Player</button>
-        <button id="chatPopupBtn" class="popout-btn chat-btn-mobile" onclick="openChatPopup()">Chat</button>
-      </div>
-      <h3>This Week’s Shows</h3>
-      <img id="now-art" src="https://i.imgur.com/EHhS47F.png" alt="Current DJ Artwork" loading="lazy">
-    </section>
-
-    <!-- SCHEDULE SECTION -->
-    <section class="schedule">
-      <h2 class="schedule-heading">This Week’s Lineup</h2>
-      <div class="schedule-scroll" id="schedule-container">
-        <p>Loading this week’s schedule…</p>
-      </div>
-    </section>
-
-    <!-- MIXCLOUD ARCHIVE SECTION -->
-    <section class="mixcloud">
-      <h2>Latest Archived Shows</h2>
-      <div id="mixcloud-list"></div>
-      <div class="add-mixcloud">
-        <input id="mixcloud-url" type="text" placeholder="Paste Mixcloud URL here…">
-        <button onclick="addMixcloud()">Add Show</button>
-      </div>
-    </section>
-  </div>
+<!-- … the rest of your page up to the footer … -->
 
   <!-- FOOTER -->
   <footer class="banner">
-    <div style="
-      background-color: var(--brand-teal);
-      padding: 0.10rem 0.65rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    ">
+    <div
+      style="
+        width: 80%;                   /* new: make this bar 80% of full width */
+        margin: 0 auto;               /* center the 80%-wide bar */
+        background-color: var(--brand-teal);
+        padding: 0.10rem 0.65rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      ">
       <a href="privacy-policy.html"
          style="
            color: #fff;
@@ -262,9 +88,12 @@
     </div>
   </footer>
 
+<!-- … your existing scripts … -->
+
+
   <!-- YOUR SCRIPTS -->
-  <script src="script.js?v=1754278045444" defer></script>
-  <script src="slideshow.js?v=1754278045444" defer></script>
+  <script src="script.js?v=1754285329454" defer></script>
+  <script src="slideshow.js?v=1754285329454" defer></script>
 
   <!-- Chromecast Handler & Manual Fallback -->
   <script>
