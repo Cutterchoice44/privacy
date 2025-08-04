@@ -141,21 +141,30 @@
     <div class="nav-item nav-center"><a href="index-ourDJS.html">OUR DJS</a></div>
     <div class="nav-item nav-right">
       <a href="merch.html">MERCH</a>
-      <a href="privacy-policy.html">PRIVACY POLICY</a>
-      <a href="https://www.amazon.com/alexa-skills/app/amzn1.ask.skill.51a30906-f266-488b-ad8e-f9d872b0760c" target="_blank">ENABLE ON ALEXA</a>
-      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/" target="_blank">LISTEN ON TUNEIN</a>
+
+      <!-- Social & Skill Icons -->
       <a href="https://facebook.com/cutterschoiceradio" target="_blank" class="social-icon">
         <i class="fab fa-facebook-f"></i>
       </a>
       <a href="https://instagram.com/cutterschoiceradio" target="_blank" class="social-icon">
         <i class="fab fa-instagram"></i>
       </a>
+      <!-- Alexa Skill Link -->
+      <a href="https://www.amazon.com/dp/51a30906-f266-488b-ad8e-f9d872b0760c" target="_blank" class="social-icon">
+        <i class="fab fa-alexa"></i>
+      </a>
+      <!-- TuneIn Link -->
+      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/" target="_blank" class="social-icon">
+        <i class="fab fa-tunein"></i>
+      </a>
+
       <!-- OneMusic badge -->
       <div class="nav-onemusic">
         <a href="https://onemusicnz.com" target="_blank" rel="noopener">
           <img src="/images/ONEMUSICLOGO.png" alt="We’re licensed to play OneMusic NZ" loading="lazy">
         </a>
       </div>
+
       <!-- Cast buttons -->
       <google-cast-button></google-cast-button>
       <button id="manualCastBtn" title="Cast this stream"><i class="fab fa-chromecast"></i></button>
@@ -182,11 +191,6 @@
     <section class="live-player">
       <h2 id="now-dj">Live Now</h2>
       <div class="player-container">
-        <!-- HTML5 audio player with built-in volume control -->
-        <audio id="audioPlayer" controls style="width: 100%; margin-bottom: 1rem;">
-          <source src="https://cutters-choice-radio.radiocult.fm/stream" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
         <iframe id="inlinePlayer" title="Cutters Choice Radio player"
                 src="https://app.radiocult.fm/embed/square-player/cutters-choice-radio?theme=midnight&primaryColor=%235A8785&corners=sharp"
                 allow="autoplay; encrypted-media" loading="lazy"></iframe>
@@ -218,7 +222,17 @@
   </div>
 
   <!-- FOOTER -->
-  <footer class="banner"></footer>
+  <footer class="banner">
+    <div style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.65rem;">
+      <a href="privacy-policy.html"
+         style="color: #fff; font-family: 'Bebas Neue', sans-serif; font-size: 1rem; text-decoration: none;">
+        PRIVACY POLICY
+      </a>
+      <p style="color: #fff; margin: 0; font-size: 0.8rem;">
+        Amazon, Alexa and all related logos are trademarks of Amazon.com, Inc. or its affiliates.
+      </p>
+    </div>
+  </footer>
 
   <!-- YOUR SCRIPTS -->
   <script src="script.js?v=1754278045444" defer></script>
