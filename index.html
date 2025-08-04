@@ -54,11 +54,18 @@
       text-decoration: none !important;
       margin: 0 0.5rem !important;
     }
-    #main-nav .social-icon,
+    /* keep social icons at original size */
+    #main-nav .social-icon {
+      margin-left: 0.5rem !important;
+      vertical-align: middle !important;
+      width: 2rem !important;
+      height: auto !important;
+    }
+    /* enlarge Alexa & TuneIn images by 20% */
     #main-nav .icon-img {
       margin-left: 0.5rem !important;
       vertical-align: middle !important;
-      width: 2.4rem !important;   /* increased by 20% (from 2rem → 2.4rem) */
+      width: 2.4rem !important;
       height: auto !important;
     }
     /* Cast fallback button */
@@ -239,8 +246,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 80%;           /* reduced width by 20% */
-      margin: 0 auto;       /* center the footer bar */
+      width: 80%;
     ">
       <a href="privacy-policy.html"
          style="
