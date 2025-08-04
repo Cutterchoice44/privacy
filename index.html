@@ -14,7 +14,7 @@
   <title>Cutters Choice Radio</title>
 
   <!-- Main stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1754286452245">
+  <link rel="stylesheet" href="style.css?v=1754286717701">
 
   <!-- Bebas Neue & FontAwesome -->
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -54,20 +54,19 @@
       text-decoration: none !important;
       margin: 0 0.5rem !important;
     }
-    /* enlarge icons by 20% (from 2rem → 2.4rem) */
     #main-nav .social-icon,
     #main-nav .icon-img {
       margin-left: 0.5rem !important;
       vertical-align: middle !important;
-      width: 2.4rem !important;
+      width: 2.4rem !important;   /* increased by 20% (from 2rem → 2.4rem) */
       height: auto !important;
     }
-    /* enlarge manual-cast button icon font by 20% */
+    /* Cast fallback button */
     #manualCastBtn {
       background: none;
       border: none;
       color: #fff;
-      font-size: 2.16rem !important;
+      font-size: 1.8rem;
       cursor: pointer;
       margin-left: 0.5rem;
     }
@@ -152,19 +151,26 @@
       </a>
 
       <!-- Alexa logo -->
-      <a href="https://www.amazon.com/gp/skill/51a30906-f266-488b-ad8e-f9d872b0760c" target="_blank" title="Enable on Alexa">
-        <img src="/images/alexa-logo.webp" alt="Enable on Alexa" class="icon-img" loading="lazy">
-      </a>
+      <img src="/images/alexa-logo.webp"
+           alt="Alexa"
+           class="icon-img"
+           loading="lazy">
 
       <!-- TuneIn logo -->
-      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/" target="_blank" title="Listen on TuneIn">
-        <img src="/images/tunein-logo.png" alt="Listen on TuneIn" class="icon-img" loading="lazy">
+      <a href="https://tunein.com/radio/Cutters-Choice-Radio-s344746/"
+         target="_blank">
+        <img src="/images/tunein-logo.png"
+             alt="TuneIn"
+             class="icon-img"
+             loading="lazy">
       </a>
 
       <!-- OneMusic badge -->
       <div class="nav-onemusic">
         <a href="https://onemusicnz.com" target="_blank" rel="noopener">
-          <img src="/images/ONEMUSICLOGO.png" alt="We’re licensed to play OneMusic NZ" loading="lazy">
+          <img src="/images/ONEMUSICLOGO.png"
+               alt="We’re licensed to play OneMusic NZ"
+               loading="lazy">
         </a>
       </div>
 
@@ -228,13 +234,13 @@
   <!-- FOOTER -->
   <footer class="banner">
     <div style="
-      width: 80%;
-      margin: 0 auto;
       background-color: var(--brand-teal);
       padding: 0.10rem 0.65rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 80%;           /* reduced width by 20% */
+      margin: 0 auto;       /* center the footer bar */
     ">
       <a href="privacy-policy.html"
          style="
@@ -256,8 +262,8 @@
   </footer>
 
   <!-- YOUR SCRIPTS -->
-  <script src="script.js?v=1754286452245" defer></script>
-  <script src="slideshow.js?v=1754286452245" defer></script>
+  <script src="script.js?v=1754286717701" defer></script>
+  <script src="slideshow.js?v=1754286717701" defer></script>
 
   <!-- Chromecast Handler & Manual Fallback -->
   <script>
